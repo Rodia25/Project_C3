@@ -13,6 +13,7 @@ public class C3
         String username, newUser; // for existing and new user
         String password, newPass;
         String major = "",country = "",year = " ";
+        String post, reply ;// Post comment or a replay
 
         System.out.println("Do you already have a C3 account:");
         response = scnr.next();
@@ -69,15 +70,13 @@ public class C3
             response = scnr.next();
             if(response.equalsIgnoreCase("comment"))
             {
-                System.out.print(username + ":\n");
-                messenger.getPost();
-                System.out.print(messenger.getPost());
+                post = messenger.getPost();
+                System.out.print(username + "{" + post+ "}");
 
             } else if (response.equalsIgnoreCase("reply"))
             {
-                System.out.println(username + ":\n");
-                messenger.getReply();
-                System.out.print(messenger.getReply());
+                reply = messenger.getReply();
+                System.out.print(username + "{" + reply + "}");
             }
 
         }
