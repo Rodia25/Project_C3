@@ -7,7 +7,7 @@ public class C3
     {
         Student student = new Student();
         Login login = new Login();
-        //Messenger messenger = new Messenger();
+        Messenger messenger = new Messenger();
         Scanner scnr = new Scanner(System.in);
         String response;    //Check whether account for user already exists
         String username, newUser; // for existing and new user
@@ -32,10 +32,14 @@ public class C3
         else if (response.equalsIgnoreCase("no"))
         {
             //New account setup
-            //login.setNewUsername("Bill123");
+            System.out.println("Enter new username:");
+            newUser = scnr.next();
+            login.setNewUsername(newUser);
             System.out.println();
             newUser = login.getNewUsername();
-            //login.setNewPassword("12345678");
+            System.out.println("Enter new password:");
+            newPass = scnr.next();
+            login.setNewPassword(newPass);
             System.out.println();
             newPass = login.getNewPassword();
             System.out.println("New Username: " + newUser);//prints out new username
@@ -56,14 +60,30 @@ public class C3
 //            language = scnr.next();
 //            student.setLanguage(language);
             student.setUsername(username);
+            student.getUsername();
             System.out.println();
             System.out.println(student.toString());
 
             //Messaging on the platform
+            System.out.print("Do you want a post a new comment or reply?(type 'comment' or 'reply')");
+            response = scnr.next();
+            if(response.equalsIgnoreCase("comment"))
+            {
+                System.out.print(username + ":\n");
+                messenger.getPost();
+                System.out.print(messenger.getPost());
 
+            } else if (response.equalsIgnoreCase("reply"))
+            {
+                System.out.println(username + ":\n");
+                messenger.getReply();
+                System.out.print(messenger.getReply());
+            }
 
         }
     }
+}
+
      import java.util.Scanner;
     public class Student
 {
@@ -206,10 +226,12 @@ public class Login
     }
 }
 
+import java.util.Scanner;
 public class Messenger
 {
     private String reply;  //Replay to someone's post
     private String post; //Make a new post
+    Scanner scnr = new Scanner(System.in);
 
     public void setPost(String post)
 
@@ -219,6 +241,7 @@ public class Messenger
 
     public String getPost()
     {
+        post = scnr.nextLine();
         return post;
     }
 
@@ -229,6 +252,7 @@ public class Messenger
 
     public String getReply()
     {
+        reply = scnr.nextLine();
         return reply;
     }
 }
