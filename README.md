@@ -56,10 +56,7 @@ public class C3
             student.setCountry(country);
             System.out.print("Academic Year: ");//Asks for Academic year (freshman, senior,etc.)
             year = scnr.next();
-            student.setYear(year);
-           System.out.print("First Language: "); //Asks for native language
-            language = scnr.next();
-            student.setLanguage(language);
+            student.setYear(year);     
             student.setUsername(username);
             student.getUsername();
             System.out.println();
@@ -90,8 +87,8 @@ public class C3
     private String country; //States user's country of birth
     private String year;    //States year of school
     private String username; //States username of student
-    private String language; //Language user wants to translate to if necassary
-    private String input;   //Input of text message
+    //private String language; //Language user wants to translate to if necassary
+    //private String input;   //Input of text message
     Scanner scnr = new Scanner(System.in);
     Login login = new Login();
     public void setMajor(String major)
@@ -136,25 +133,25 @@ public class C3
         return username;
     }
 
-    public void setLanguage(String language)
-    {
-        this.language = language;
-    }
+    //public void setLanguage(String language)
+    //{
+      //  this.language = language;
+    //}
 
-    public String getLanguage()
-    {
-        return language;
-    }
+    //public String getLanguage()
+    //{
+      //  return language;
+    //}
 
-    public void setInput(String input)
-    {
-        this.input = input;
-    }
+  //public void setInput(String input)
+    //{
+      //  this.input = input;
+    //}
 
-    public String getInput()
-    {
-        return input;
-    }
+    //public String getInput()
+    //{
+      //  return input;
+    //}
 
     @Override
     public String toString()
