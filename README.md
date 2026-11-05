@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class C3
 {
 
-     static void main()
+     public static void main(String[] args)
     {
         Student student = new Student();
         Login login = new Login();
@@ -82,6 +82,7 @@ public class C3
 
      import java.util.Scanner;
     public class Student
+    
 {
     private String major;   //States user's Major
     private String country; //States user's country of birth
@@ -145,7 +146,7 @@ public class C3
 
   //public void setInput(String input)
     //{
-      //  this.input = input;
+       // this.input = input;
     //}
 
     //public String getInput()
